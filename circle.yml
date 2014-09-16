@@ -1,0 +1,15 @@
+dependencies:
+  pre:
+    - bundle install:
+        timeout: 600
+
+test:
+  post:
+    - bundle exec piculet --dry-run --apply
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - bundle exec piculet --apply
+
