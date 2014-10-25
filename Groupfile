@@ -68,6 +68,11 @@ ec2 "vpc-8df51fe8" do
           "0.0.0.0/0"
         )
       end
+      permission :tcp, 65467..65467 do
+        ip_ranges(
+          "0.0.0.0/0"
+        )
+      end
     end
 
     egress do
